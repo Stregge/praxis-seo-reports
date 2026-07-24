@@ -1,0 +1,23 @@
+# Sicherheit: niemals Zugangsdaten/Geheimnisse in dieses (oeffentliche!) Repo
+.env
+.env.*
+*.env
+*key*
+*Key*
+*KEY*
+*password*
+*Password*
+*PASSWORD*
+*secret*
+*Secret*
+*SECRET*
+*token*
+*Token*
+*TOKEN*
+*credential*
+*.pem
+*.key
+id_rsa*
+wp_publish.log
+__pycache__/
+*.pyc
