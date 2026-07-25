@@ -13,12 +13,5 @@ _Stand: 2026-07-25_
 | copilot | 0 |
 | grok | 0 |
 
-## ⚠️ Blocker gefunden: 3 Seiten blockieren KI-Trainings-Crawler
-
-Das ist vermutlich der Hauptgrund fuer fehlende KI-Sichtbarkeit. Betroffene Seiten (Auszug, max. 10):
-
-- https://www.naturheilpraxis-straehuber.de/robots.txt
-- https://naturheilpraxis-straehuber.de/robots.txt
-- http://naturheilpraxis-straehuber.de/robots.txt
-
-**Empfehlung:** robots.txt pruefen und ggf. gezielt GPTBot, PerplexityBot, Google-Extended u.a. erlauben (keine automatische Aenderung, nur Empfehlung).
+## Crawler-Check: keine Blockade gefunden
+Alle geprueften Seiten erlauben laut `allowed_training_bots` das Crawlen durch KI-Trainings-Bots – die fehlende Sichtbarkeit liegt also nicht an einer robots.txt-Sperre.
