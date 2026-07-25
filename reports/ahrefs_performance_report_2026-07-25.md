@@ -3,10 +3,8 @@ _Stand: 2026-07-25_
 
 **0 Seiten mit Lighthouse-Score** (von 380 geprueften Seiten)
 
-## Die 20 schwaechsten Seiten (Lighthouse-Score)
+⚠️ **Keine PSI/Lighthouse-Daten vorhanden.** Ahrefs hat fuer dieses Projekt noch nie PageSpeed-Insights-Daten angefragt (`psi_request_status: Gapi_psi_user_not_asked`). Das ist keine Fehlfunktion dieses Reports, sondern eine Ahrefs-Projekteinstellung: PageSpeed/Core-Web-Vitals-Checks muessen im Ahrefs-Site-Audit-Projekt (Projekteinstellungen -> Crawl-Einstellungen) einmalig aktiviert werden. Danach fuellt sich dieser Bericht beim naechsten Lauf automatisch.
 
-| URL | Lighthouse | LCP-Perzentil | CLS-Perzentil | INP-Perzentil | Ladezeit (ms) | TTFB (ms) |
-|---|---|---|---|---|---|---|
 
 ## Bilder zu groß (15 Seiten)
 
