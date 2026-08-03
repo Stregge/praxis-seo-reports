@@ -47,3 +47,26 @@ Alle 3 sind bereits komprimiert und lokal gesichert (88–94% Ersparnis berechne
 1. **Inline-Bild-Ersetzung** für die 3 obigen Fälle (und generell für künftige Wochenreports) – müsste den Bild-Link direkt im Artikel-Content finden und ersetzen, nicht nur `featured_media`.
 2. **Cron-Integration:** Das Skript (`image_optimize.py`) läuft aktuell nur manuell. Soll ich es in den bestehenden Montags-Cron aufnehmen?
 3. **Wochenreport-Dokumentation:** `ahrefs_audit_report` müsste künftig automatisch mitmelden, wie viele Bilder optimiert und wie viel gespart wurde – noch nicht verdrahtet.
+
+---
+
+## Update 03.08. – Abschluss aller 3 offenen Punkte
+
+### 1. Inline-Bild-Ersetzung: gebaut, aber bei den 3 bekannten Fällen nicht gebraucht
+Root Cause der 3 "nicht zuordenbaren" Bilder war einfacher als angenommen: Mein Skript hat beim Suchen in der Mediathek die von WordPress automatisch angehängte Größen-Endung (z.B. "-1024x572") bzw. die "-scaled"-Markierung (für automatisch verkleinerte Originale) nicht abgezogen – dadurch fand die Suche das echte Original nicht. Nach dem Fix lösen sich alle 3 als ganz normale Featured-Image-Fälle auf, live getauscht und verifiziert:
+- `arthrose-uebungen-zuhause-1024x572.png` → Post "arthrose-uebungen-zuhause"
+- `stoffwechsel-verstehen-und-optimieren-1-1024x683.png` → Post "wie-geht-es-denn-meinem-stoffwechsel..."
+- `meine-gefaesse-sind-verkalkt-1024x1024.png` → Post "verkalkte-gefaesse"
+
+Echte Inline-Content-Ersetzung (Bild-URL direkt im Fließtext finden und tauschen, mit Vorher/Nachher-Diff) ist trotzdem eingebaut als Fallback für künftige, tatsächlich inline eingebundene Bilder – konnte an einem echten Fall aber noch nicht bewiesen werden, weil keiner der 3 bekannten Fälle das gebraucht hat.
+
+### 2. Cron eingerichtet
+`image_optimize.py --live` läuft jetzt Montags **05:50** (vor dem 06:00-Audit-Report, damit dieselbe Woche im Report auftaucht). Wie beim letzten Mal hatte ich beim ersten Eintragen den `cd`-Befehl vergessen – diesmal vor dem Verifizieren selbst bemerkt und korrigiert.
+
+### 3. Wochenreport erweitert
+`ahrefs_tool.py audit_report` zeigt jetzt automatisch einen Abschnitt "Automatische Bild-Optimierung" mit Anzahl optimierter Bilder, gesparten MB, SVG-Ausnahmen und nicht zuordenbaren Fällen – heute end-to-end getestet, funktioniert.
+
+**Hinweis für dich:** Im heutigen Report steht "Image file size too large: 19, unverändert" UND "18 Bilder optimiert" nebeneinander – das ist kein Widerspruch, sondern Ahrefs' eigener Crawl-Zyklus hinkt hinterher. Die Zahl bei Ahrefs aktualisiert sich erst beim nächsten Ahrefs-Crawl, unabhängig davon, dass wir die Bilder schon getauscht haben.
+
+### ⚠️ Selbst verursachter Bug unterwegs gefunden und gefixt
+Beim Live-Lauf für die 3 Bilder hat ein Fehler in meiner eigenen Kommandozeilen-Verarbeitung (`--live --urls ...` wurde falsch interpretiert) dazu geführt, dass **alle 19 Bilder ein zweites Mal** verarbeitet wurden – inhaltlich kein Schaden (alles ist am Ende korrekt), aber es liegen jetzt **15 verwaiste, ungenutzte WebP-Duplikate** in der Mediathek (IDs 33819–33833, alle geprüft: kein Post zeigt mehr darauf). Bug gefixt. Soll ich die 15 Duplikate löschen, oder lässt du sie erstmal liegen?
