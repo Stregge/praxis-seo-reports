@@ -35,3 +35,7 @@ _Stand: 2026-08-03_
 
 - **18 Bilder** automatisch komprimiert und ersetzt (WebP), **24.37 MB gespart**
 - 1 SVG(s) übersprungen (Vektorformat, keine WebP-Konvertierung)
+
+## Automatische Alt-Text-Ergänzung (diese Woche)
+
+- **0 Alt-Texte** automatisch per Gemini generiert und gesetzt (2 geprüfte Seiten)
