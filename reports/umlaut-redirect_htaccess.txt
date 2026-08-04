@@ -1,0 +1,13 @@
+# .htaccess für naturheilpraxis-strähuber.de (Punycode: xn--naturheilpraxis-strhuber-8bc.de)
+# Leitet jeden Pfad 1:1 auf die entsprechende Seite von naturheilpraxis-straehuber.de weiter,
+# erzwingt dabei https. Beispiel: /faszientherapie/ -> https://www.naturheilpraxis-straehuber.de/faszientherapie/
+
+RewriteEngine On
+
+# 1. http -> https erzwingen (falls das Zertifikat schon greift, aber http noch offen ist)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.naturheilpraxis-straehuber.de/$1 [R=301,L,QSA]
+
+# 2. Alles (mit oder ohne www) auf die neue Domain weiterleiten, Pfad + Query-String bleiben erhalten
+RewriteCond %{HTTPS} on
+RewriteRule ^(.*)$ https://www.naturheilpraxis-straehuber.de/$1 [R=301,L,QSA]
