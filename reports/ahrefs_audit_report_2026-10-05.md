@@ -1,0 +1,43 @@
+# Ahrefs Site-Audit-Report – naturheilpraxis-straehuber.de
+_Stand: 2026-10-05_
+
+**Health Score:** 100/100 – +0 ggue. letztem Lauf (100)
+**Gepruefte Seiten:** 406 (2 Fehler, 175 Warnungen, 94 Hinweise)
+
+## Probleme mit betroffenen Seiten (nur aktive Probleme)
+
+| Wichtigkeit | Problem | Kategorie | Betroffene Seiten | Aenderung ggue. letztem Lauf |
+|---|---|---|---|---|
+| Error | Image file size too large | Images | 1 | unveraendert |
+| Warning | Title too long | Content | 58 | unveraendert |
+| Warning | H1 tag missing or empty | Content | 33 | unveraendert |
+| Warning | Slow server response for AI crawlers | AI Discoverability | 15 | +3 |
+| Warning | Meta description too short | Content | 13 | unveraendert |
+| Warning | Meta description too long | Content | 9 | unveraendert |
+| Warning | Meta description tag missing or empty | Content | 1 | unveraendert |
+| Warning | Noindex page | Indexability | 1 | unveraendert |
+| Notice | Structured data has Google rich results validation error | Other | 79 | +1 |
+| Notice | Multiple H1 tags | Content | 4 | unveraendert |
+| Notice | Structured data has schema.org validation error | Other | 3 | unveraendert |
+| Notice | Page and SERP titles do not match | Content | 3 | +1 |
+| Notice | Changed pages not submitted to IndexNow | AI Discoverability | 2 | unveraendert |
+| Notice | Organic traffic dropped | Other | 1 | unveraendert |
+| Notice | Pages dropped from Top 10 | Other | 1 | (neu erfasst) |
+| Notice | Meta description too short | Content | 1 | unveraendert |
+| Notice | Noindex follow page | Indexability | 1 | unveraendert |
+
+## Automatische Bild-Optimierung (diese Woche)
+
+- **0 Bilder** automatisch komprimiert und ersetzt (WebP), **0.0 MB gespart**
+- 1 SVG(s) übersprungen (Vektorformat, keine WebP-Konvertierung)
+
+## Automatische Alt-Text-Ergänzung (diese Woche)
+
+- **0 Alt-Texte** automatisch per Gemini generiert und gesetzt (0 geprüfte Seiten)
+
+## Link-Selbstheilung (diese Woche)
+
+- **0 kaputte interne Links** gefunden (115 Links geprueft)
+- **0 automatisch korrigiert** (eindeutiger Slug-Treffer, Original-Content vorher gesichert)
+- **0 zur manuellen Pruefung** gelistet
+- **0 Redirect-Ketten** (2+ Hops) erkannt, davon 0 auf einen Hop verkuerzt
